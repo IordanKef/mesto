@@ -1,0 +1,54 @@
+.profile {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 200px 51px;
+  gap: 20px;
+}
+
+
+/*
+.profile {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40px 200px 51px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: min-content minmax(min-content, max-content) min-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'avatar details edit-button add-button'
+    'avatar details . add-button';
+}
+
+@media screen and (max-width: 1279px) {
+  .profile {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .profile {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 721px) {
+  .profile {
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'avatar avatar'
+      'details edit-button'
+      'details .'
+      'add-button add-button';
+  }
+}
+
+*/

@@ -1,0 +1,14 @@
+.profile__info {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+.profile__info {
+  grid-area: details;
+  margin: 0 20px 0 30px;
+  text-overflow: ellipsis;
+  max-width: 500px;
+  border: 1px solid wheat;
+}
+*/

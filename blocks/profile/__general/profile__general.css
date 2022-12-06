@@ -1,0 +1,5 @@
+.profile__general {
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+}
