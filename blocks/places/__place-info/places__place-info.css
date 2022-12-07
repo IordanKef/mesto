@@ -1,0 +1,9 @@
+.places__place-info {
+  box-sizing: border-box;
+  padding: 0 21px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  gap: 10px;
+}
