@@ -9,37 +9,12 @@
   max-width: 500px;
 }
 
-@media screen and (max-width: 1025px) {
-  .profile__username {
-    font-size: 32px;
-    line-height: 1.1;
-    max-width: 400px;
-  }
-}
 
-@media screen and (max-width: 861px) {
-  .profile__username {
-    max-width: 250px;
-  }
-}
-
-@media screen and (max-width: 721px) {
-  .profile__username {
-    font-size: 30px;
-    max-width: 350px;
-  }
-}
-
-@media screen and (max-width: 511px) {
-  .profile__username {
-    max-width: 300px;
-  }
-}
-
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 918px) {
   .profile__username {
     max-width: 250px;
     font-size: 27px;
-    line-height: 33px;
+    line-height: 32px;
+    max-width: 250px;
   }
 }

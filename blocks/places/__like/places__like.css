@@ -3,4 +3,10 @@
   height: 19px;
   background: url(../../../images/like.svg) no-repeat center center;
   background-size: 22px 19px;
+  margin-top: 5px;
+}
+
+.places__like:hover {
+  cursor: pointer;
+  opacity: .5;
 }

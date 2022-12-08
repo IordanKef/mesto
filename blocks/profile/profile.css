@@ -1,38 +1,28 @@
 .profile {
-  width: 100%;
-  box-sizing: border-box;
+  max-width: 880px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 40px 200px 51px;
+  padding: 40px 19px 51px;
   gap: 20px;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 918px) {
   .profile {
-    padding-left: 150px;
-    padding-right: 150px;
+    max-width: 581px;
   }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 619px) {
   .profile {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-}
-
-@media screen and (max-width: 721px) {
-  .profile {
-    padding: 41px 30px 36px;
     flex-direction: column;
     gap: 40px;
-  }
+    padding-bottom: 36px;
+    }
 }
 
 @media screen and (max-width: 426px) {
   .profile {
-    padding-left: 19px;
-    padding-right: 19px;
     gap: 30px;
   }
 }

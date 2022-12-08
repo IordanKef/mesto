@@ -20,4 +20,12 @@
 @import url(../blocks/places/__place-info/places__place-info.css);
 @import url(../blocks/places/__place-name/places__place-name.css);
 @import url(../blocks/places/__like/places__like.css);
-
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__user-info/form__user-info.css);
+@import url(../blocks/form/__save-button/form__save-button.css);
+@import url(../blocks/form/__close-button/form__close-button.css);
+@import url(../blocks/form/__input-text/form__input-text.css);

@@ -35,19 +35,17 @@
           </div>
           <button class="profile__add-button"></button>
         </section>
-        <section class="places">
-
+        <section class="places" aria-label="Страница о путешествиях пользователя">
           <article class="places__place">
             <img
               class="places__place-image"
               alt="Водопад на скалистом берегу моря"
               src="./images/scotland.jpg">
             <div class="places__place-info">
-              <h2 class="places__place-name default-text">Шотландия  aaaaaaaaaaaaaaaaaaaaaa</h2>
+              <h2 class="places__place-name default-text">Шотландия</h2>
               <div class="places__like"></div>
             </div>
           </article>
-
           <article class="places__place">
             <img
               class="places__place-image"
@@ -58,7 +56,6 @@
               <div class="places__like"></div>
             </div>
           </article>
-
           <article class="places__place">
             <img
               class="places__place-image"
@@ -69,7 +66,6 @@
               <div class="places__like"></div>
             </div>
           </article>
-
           <article class="places__place">
             <img
               class="places__place-image"
@@ -80,7 +76,6 @@
               <div class="places__like"></div>
             </div>
           </article>
-
           <article class="places__place">
             <img
               class="places__place-image"
@@ -91,7 +86,6 @@
               <div class="places__like"></div>
             </div>
           </article>
-
           <article class="places__place">
             <img
               class="places__place-image"
@@ -102,10 +96,26 @@
               <div class="places__like"></div>
             </div>
           </article>
-
         </section>
       </main>
-      <footer class="footer"></footer>
+      <section class="popup">
+        <form class="form">
+          <h2 class="form__title default-text">Редактировать профиль</h2>
+          <fieldset class="form__user-info">
+            <input type="text" class="form__input-text default-text" placeholder="Поле для вашего имени">
+            <input type="text" class="form__input-text" placeholder="Придумайте себе титул">
+            <button
+              class="form__save-button default-text"
+              type="submit">
+              Сохранить
+            </button>
+          </fieldset>
+          <button class="form__close-button" type="reset"></button>
+        </form>
+      </section>
+      <footer class="footer">
+        <p class="footer__copyright default-text">© 2020 Mesto Russia</p>
+      </footer>
     </div>
   </body>
 </html>

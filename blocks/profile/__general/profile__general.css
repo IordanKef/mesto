@@ -6,13 +6,14 @@
 
 @media screen and (max-width: 721px) {
   .profile__general {
-    flex-direction: column;
-    align-items: center;
+    gap: 15px;
   }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 618px) {
   .profile__general {
+    flex-direction: column;
+    align-items: center;
     gap: 26px;
   }
 }

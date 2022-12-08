@@ -1,0 +1,28 @@
+.form__save-button {
+  background-color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  height: 50px;
+  width: 358px;
+  margin-top: 23px;
+  border: none;
+  border-radius: 2px;
+}
+
+
+@media screen and (max-width: 561px) {
+  .form__save-button {
+    height: 46px;
+    width: 238px;
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.form__save-button:hover {
+  cursor: pointer;
+  opacity: .8;
+}

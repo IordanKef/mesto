@@ -8,27 +8,16 @@
   margin-top: 17px;
 }
 
-@media screen and (max-width:1025px) {
-  .profile__edit-button {
-    width: 20px;
-    height: 20px;
-    margin-top: 11px;
-  }
-}
-
-@media screen and (max-width:1025px) {
-  .profile__edit-button {
-    width: 19px;
-    height: 19px;
-    margin-top: 9px;
-  }
-}
-
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 918px) {
   .profile__edit-button {
     width: 18px;
     height: 18px;
     background-size: 8px 8px;
     margin-top: 9px;
   }
+}
+
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: .6;
 }
