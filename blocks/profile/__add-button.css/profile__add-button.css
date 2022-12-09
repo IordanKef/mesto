@@ -9,6 +9,7 @@
   background-size: 22px 22px;
   border: 2px solid #FFF;
   align-self: center;
+  transition: opacity .2s linear;
 }
 
 @media screen and (max-width: 619px) {
