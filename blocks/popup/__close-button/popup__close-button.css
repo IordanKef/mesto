@@ -3,7 +3,7 @@
   width: 32px;
   height: 32px;
   background: url(../../../images/close-icon.svg) no-repeat center center;
-  background-size: 29px 29px;
+  background-size: cover;
   top: -40px;
   right: -40px;
   border: none;
@@ -14,13 +14,11 @@
   .popup__close-button {
     width: 20px;
     height: 20px;
-    background-size: 20px 20px;
     top: -35px;
     right: 0;
     border: none;
   }
 }
-
 
 .popup__close-button:hover {
   cursor: pointer;

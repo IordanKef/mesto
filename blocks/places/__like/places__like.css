@@ -1,6 +1,7 @@
 .places__like {
-  width: 22px;
-  height: 19px;
+  border: none;
+  width: 23px;
+  height: 20px;
   background: url(../../../images/like.svg) no-repeat center center;
   background-size: 22px 19px;
   margin-top: 5px;
