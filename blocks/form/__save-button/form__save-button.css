@@ -1,5 +1,5 @@
 .form__save-button {
-  margin: 0;
+  margin: 23px 0 0;
   padding: 0;
   background-color: #000;
   color: #fff;
@@ -9,7 +9,6 @@
   text-align: center;
   height: 50px;
   width: 358px;
-  margin-top: 23px;
   border: none;
   border-radius: 2px;
   transition: opacity .2s linear;

@@ -1,5 +1,5 @@
 .form__input-text {
-  margin: 0;
+  margin: 0 0 25px;
   padding: 0;
   color: #000;
   box-sizing: border-box;
@@ -10,7 +10,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  margin-bottom: 25px;
 }
 
 @media screen and (max-width: 561px) {
