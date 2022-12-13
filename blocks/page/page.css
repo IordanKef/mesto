@@ -1,5 +1,13 @@
 .page {
   min-width: 320px;
   max-width: 1280px;
-  margin: auto;
+  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

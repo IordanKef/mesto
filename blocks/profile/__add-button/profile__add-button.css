@@ -4,18 +4,21 @@
   width: 150px;
   height: 50px;
   min-width: 50px;
-  background-color: #000000;
+  background-color: transparent;
   background: url(../../../images/plus.svg) no-repeat center center;
   background-size: 22px 22px;
   border: 2px solid #FFF;
   align-self: center;
   transition: opacity .2s linear;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 619px) {
   .profile__add-button {
+    margin: 0;
     width: 282px;
     background-size: 16px 16px;
+    margin-top: 7px;
   }
 }
 

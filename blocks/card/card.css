@@ -1,15 +1,7 @@
-.places__place {
+.card {
   min-width: 282px;
   min-height: 361px;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
 }
-
-/*
-@media screen and (max-width: 1279px) {
-  .places__place {
-    max-width: 220px;
-  }
-}
-*/

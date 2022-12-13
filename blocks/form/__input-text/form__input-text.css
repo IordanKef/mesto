@@ -1,4 +1,6 @@
 .form__input-text {
+  margin: 0;
+  padding: 0;
   color: #000;
   box-sizing: border-box;
   padding-bottom: 10px;

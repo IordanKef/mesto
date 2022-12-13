@@ -1,5 +1,8 @@
 .form__save-button {
+  margin: 0;
+  padding: 0;
   background-color: #000;
+  color: #fff;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;

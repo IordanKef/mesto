@@ -1,17 +1,7 @@
-
 .profile__avatar {
   border-radius: 50%;
   object-fit: contain;
+  height: 120px;
   width: 120px;
 }
 
-
-
-/*
-@media screen and (max-width: 721px) {
-  .profile__avatar {
-    justify-self: center;
-    align-self: center;
-  }
-}
-*/

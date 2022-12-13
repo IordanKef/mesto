@@ -1,4 +1,6 @@
 .form__title {
+  margin: 0;
+  padding: 0;
   color: #000;
   font-weight: 900;
   font-size: 24px;
@@ -7,7 +9,6 @@
 
 @media screen and (max-width: 561px) {
   .form__title {
-    font-weight: 900;
     font-size: 18px;
     line-height: 22px;
   }
