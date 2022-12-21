@@ -44,7 +44,13 @@
           aria-label="Страница о путешествиях пользователя"
         >
           <ul class="places__list">
+            <!--
             <li class="card">
+              <button
+                class="card__delete-button"
+                type="button"
+                aria-label="Удалить фотографию"
+              ></button>
               <img
                 class="card__image"
                 alt="Водопад на скалистом берегу моря"
@@ -134,10 +140,11 @@
                 ></button>
               </div>
             </li>
+          -->
           </ul>
         </section>
       </main>
-      <div class="popup">
+      <div class="popup popup_type_profile">
         <div class="popup__container">
           <form class="form" name="profile-form">
             <h2 class="form__title">Редактировать профиль</h2>
@@ -145,14 +152,14 @@
               <input
                 type="text"
                 name="addName"
-                class="form__input-text form__input-text_type_name"
+                class="form__input-text form__input-text_type_first"
                 placeholder="Поле для вашего имени"
                 required
               />
               <input
                 type="text"
                 name="addRole"
-                class="form__input-text form__input-text_type_role"
+                class="form__input-text form__input-text_type_second"
                 placeholder="Придумайте себе титул"
                 required
               />
@@ -172,10 +179,75 @@
           ></button>
         </div>
       </div>
+
+
+      <div class="popup popup_type_place">
+        <div class="popup__container">
+          <form class="form" name="place-form">
+            <h2 class="form__title">Новое место</h2>
+            <fieldset class="form__user-info">
+              <input
+                type="text"
+                name="addPlaceName"
+                class="form__input-text form__input-text_type_first"
+                placeholder="Название"
+                required
+              />
+              <input
+                type="text"
+                name="addPhoto"
+                class="form__input-text form__input-text_type_second"
+                placeholder="Ссылка на картинку"
+                required
+              />
+            </fieldset>
+            <button
+              class="form__save-button"
+              type="submit"
+              aria-label="Сохранить"
+            >
+              Сохранить
+            </button>
+          </form>
+          <button
+            class="popup__close-button"
+            type="button"
+            aria-label="Закрыть"
+          ></button>
+        </div>
+      </div>
+
+
+
+
       <footer class="footer">
         <p class="footer__copyright">© 2022 Mesto Russia</p>
       </footer>
     </div>
+
+    <template id="card">
+      <li class="card">
+        <button
+          class="card__delete-button"
+          type="button"
+          aria-label="Удалить фотографию"
+        ></button>
+        <img
+          class="card__image"
+          alt="Водопад на скалистом берегу моря"
+          src=""
+        />
+        <div class="card__info">
+          <h2 class="card__title"></h2>
+          <button
+            class="card__like"
+            type="button"
+            aria-label="Поставить лайк"
+          ></button>
+        </div>
+      </li>
+    </template>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>

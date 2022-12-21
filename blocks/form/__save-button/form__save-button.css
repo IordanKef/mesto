@@ -11,7 +11,7 @@
   width: 358px;
   border: none;
   border-radius: 2px;
-  transition: opacity .2s linear;
+  transition: opacity .1s linear;
 }
 
 @media screen and (max-width: 561px) {
