@@ -43,105 +43,7 @@
           class="places"
           aria-label="Страница о путешествиях пользователя"
         >
-          <ul class="places__list">
-            <!--
-            <li class="card">
-              <button
-                class="card__delete-button"
-                type="button"
-                aria-label="Удалить фотографию"
-              ></button>
-              <img
-                class="card__image"
-                alt="Водопад на скалистом берегу моря"
-                src="./images/scotland.jpg"
-              />
-              <div class="card__info">
-                <h2 class="card__title">Шотландия</h2>
-                <button
-                  class="card__like"
-                  type="button"
-                  aria-label="Поставить лайк"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="Руины города инков в горах"
-                src="./images/machu-pichu.jpg"
-              />
-              <div class="card__info">
-                <h2 class="card__title">Мачу-Пикчу</h2>
-                <button
-                  class="card__like"
-                  type="button"
-                  aria-label="Поставить лайк"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="Канал в парке Петергофа"
-                src="./images/Peterhof.jpg"
-              />
-              <div class="card__info">
-                <h2 class="card__title">Петергоф</h2>
-                <button
-                  class="card__like"
-                  type="button"
-                  aria-label="Поставить лайк"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="Столовые горы в пустыне"
-                src="./images/gobi.jpg"
-              />
-              <div class="card__info">
-                <h2 class="card__title">Пустыня Гоби</h2>
-                <button
-                  class="card__like"
-                  type="button"
-                  aria-label="Поставить лайк"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="Гора на берегу южного моря"
-                src="./images/Crete.jpg"
-              />
-              <div class="card__info">
-                <h2 class="card__title">Остров Крит</h2>
-                <button
-                  class="card__like"
-                  type="button"
-                  aria-label="Поставить лайк"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="Покрытые снегом дома на берегу канала"
-                src="./images/hokkaido.jpg"
-              />
-              <div class="card__info">
-                <h2 class="card__title">Хоккайдо</h2>
-                <button
-                  class="card__like"
-                  type="button"
-                  aria-label="Поставить лайк"
-                ></button>
-              </div>
-            </li>
-          -->
-          </ul>
+          <ul class="places__list"></ul>
         </section>
       </main>
       <div class="popup popup_type_profile">
@@ -179,9 +81,7 @@
           ></button>
         </div>
       </div>
-
-
-      <div class="popup popup_type_place">
+      <div class="popup popup_type_add-place">
         <div class="popup__container">
           <form class="form" name="place-form">
             <h2 class="form__title">Новое место</h2>
@@ -206,7 +106,7 @@
               type="submit"
               aria-label="Сохранить"
             >
-              Сохранить
+              Создать
             </button>
           </form>
           <button
@@ -216,15 +116,23 @@
           ></button>
         </div>
       </div>
-
-
-
-
+      <div class="popup popup_type_place">
+        <div class="popup__container">
+          <div class="place">
+            <img class="place__image" alt="" src="" />
+            <h2 class="place__title"></h2>
+          </div>
+          <button
+            class="popup__close-button"
+            type="button"
+            aria-label="Закрыть"
+          ></button>
+        </div>
+      </div>
       <footer class="footer">
         <p class="footer__copyright">© 2022 Mesto Russia</p>
       </footer>
     </div>
-
     <template id="card">
       <li class="card">
         <button
@@ -232,11 +140,7 @@
           type="button"
           aria-label="Удалить фотографию"
         ></button>
-        <img
-          class="card__image"
-          alt="Водопад на скалистом берегу моря"
-          src=""
-        />
+        <img class="card__image" alt="" src="" />
         <div class="card__info">
           <h2 class="card__title"></h2>
           <button
@@ -247,7 +151,6 @@
         </div>
       </li>
     </template>
-
     <script src="./scripts/index.js"></script>
   </body>
 </html>

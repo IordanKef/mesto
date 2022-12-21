@@ -1,23 +1,28 @@
-//переменные для работы с профилем
+//profile variables
 const editButton = document.querySelector('.profile__edit-button');
-let username = document.querySelector('.profile__username');
-let userRole = document.querySelector('.profile__user-role');
-let profilePopup = document.querySelector('.popup_type_profile');
+const username = document.querySelector('.profile__username');
+const userRole = document.querySelector('.profile__user-role');
+const profilePopup = document.querySelector('.popup_type_profile');
 const closeProfileButton = profilePopup.querySelector('.popup__close-button');
-let profileForm = profilePopup.querySelector('.form');
-let newName = profilePopup.querySelector('.form__input-text_type_first');
-let newRole = profilePopup.querySelector('.form__input-text_type_second');
+const profileForm = profilePopup.querySelector('.form');
+const newName = profilePopup.querySelector('.form__input-text_type_first');
+const newRole = profilePopup.querySelector('.form__input-text_type_second');
 
-//переменные для работы с карточками
+//card's variables
 const addButton = document.querySelector('.profile__add-button');
-let placePopup = document.querySelector('.popup_type_place');
-const closePlaceButton = placePopup.querySelector('.popup__close-button');
-let placeForm = placePopup.querySelector('form');
-let newPlaceTitle = placePopup.querySelector('.form__input-text_type_first');
-let newPlaceImageUrl = placePopup.querySelector('.form__input-text_type_second');
-let placesList = document.querySelector('.places__list');
+const addPlacePopup = document.querySelector('.popup_type_add-place');
+const closeAddPlaceButton = addPlacePopup.querySelector('.popup__close-button');
+const placeForm = addPlacePopup.querySelector('form');
+const newPlaceTitle = addPlacePopup.querySelector('.form__input-text_type_first');
+const newPlaceImageUrl = addPlacePopup.querySelector('.form__input-text_type_second');
+const placesList = document.querySelector('.places__list');
 
-//массив с дефолтными карточками
+const placePopup = document.querySelector('.popup_type_place');
+const closePlaceButton = placePopup.querySelector('.popup__close-button');
+const placePopupImage = placePopup.querySelector('.place__image');
+const placePopupTitle = placePopup.querySelector('.place__title')
+
+//default places to load
 const initialCards = [
   {
     name: 'Архыз',
@@ -45,19 +50,34 @@ const initialCards = [
   }
 ];
 
-//универсальная ф. открытия попапа
 function openPopup(popup) {
   popup.classList.add('popup_showed');
 }
 
-//ф. открытия попапа редактирования профиля
-function openProfilePopup() {
+function openProfilePop() {
   newName.value = username.textContent;
   newRole.value = userRole.textContent;
   openPopup(profilePopup);
 }
 
-//ф. редактирования профиля
+function closeProfilePop() {
+  profilePopup.classList.remove('popup_showed');
+}
+
+function openAddPlacePop() {
+  newPlaceTitle.value = "";
+  newPlaceImageUrl.value = "";
+  openPopup(addPlacePopup);
+}
+
+function closeAddPlacePop() {
+  addPlacePopup.classList.remove('popup_showed');
+}
+
+function closePlacePop () {
+  placePopup.classList.remove('popup_showed');
+}
+
 function updateProfile(evt) {
   evt.preventDefault();
   username.textContent = newName.value;
@@ -65,64 +85,56 @@ function updateProfile(evt) {
   closeProfilePop()
 }
 
-//ф. закрытия попапа редактирования профиля
-function closeProfilePop() {
-  profilePopup.classList.remove('popup_showed');
-}
-
-//ф. открытия попапа добавления новой карточки
-function openPlacePopup() {
-  newPlaceTitle.value = "";
-  newPlaceImageUrl.value = "";
-  openPopup(placePopup);
-}
-
-//ф. закрытия попапа добавления новой карточки
-function closePlacePop() {
-  placePopup.classList.remove('popup_showed');
-}
-
-//ф. создания карточки из темплейта
+//create card from teamplate
 const createCard = function (title, url) {
   const cardTemplate = document.querySelector('#card').content;
   const newCard = cardTemplate.querySelector('.card').cloneNode(true);
   newCard.querySelector('.card__title').textContent = title;
   newCard.querySelector('.card__image').src = url;
 
+  //like feature
   const likeButton = newCard.querySelector('.card__like');
   likeButton.addEventListener('click', function (event) {
-    eventTarget = event.target;
+    let eventTarget = event.target;
     eventTarget.classList.toggle('card__like_liked')
   });
 
+  //delete feature
   const deleteButton = newCard.querySelector('.card__delete-button');
   deleteButton.addEventListener('click', function (event) {
-    eventTarget = event.target;
+    let eventTarget = event.target;
     const thatCard = eventTarget.closest('.card');
     thatCard.remove();
+  })
+
+  //open large photo with title feature
+  const image = newCard.querySelector('.card__image');
+  image.addEventListener('click', function (event) {
+    let eventTarget = event.target;
+    placePopup.classList.add('popup_showed');
+    placePopupImage.src = eventTarget.src;
+    let cardTitle = eventTarget.nextElementSibling.firstElementChild;
+    placePopupTitle.textContent = cardTitle.textContent;
   })
 
   placesList.append(newCard);
 }
 
-//ф. добавления карточки через форму
 function addCard(evt) {
   evt.preventDefault();
   createCard(newPlaceTitle.value, newPlaceImageUrl.value);
-  closePlacePop();
+  closeAddPlacePop();
 }
 
-//установка дефолтных карточек
+//set default cards
 initialCards.forEach( function (item) {
   createCard(item.name, item.link);
 })
 
-//обработчики кнопок и событий
-editButton.addEventListener('click', openProfilePopup);
-addButton.addEventListener('click', openPlacePopup);
+editButton.addEventListener('click', openProfilePop);
+addButton.addEventListener('click', openAddPlacePop);
 closeProfileButton.addEventListener('click', closeProfilePop);
-closePlaceButton.addEventListener('click', closePlacePop);
+closeAddPlaceButton.addEventListener('click', closeAddPlacePop);
 profileForm.addEventListener('submit', updateProfile);
 placeForm.addEventListener('submit', addCard);
-
-
+closePlaceButton.addEventListener('click', closePlacePop);

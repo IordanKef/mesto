@@ -1,0 +1,12 @@
+/*
+.popup_type_place {
+  visibility: visible;
+  opacity: 1;
+}
+*/
+
+.place {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

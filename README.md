@@ -10,6 +10,10 @@
   - Медиа-запросы
   - Flex
   - Grid layout
-- Javascript
+- Javascript:
+  - Кнопки
+  - Формы
+  - Темплейты
+  - Попапы
 
 [Адрес страницы](https://iordankef.github.io/mesto/)
