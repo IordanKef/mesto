@@ -22,59 +22,30 @@ const closePlaceButton = placePopup.querySelector('.popup__close-button');
 const placePopupImage = placePopup.querySelector('.place__image');
 const placePopupTitle = placePopup.querySelector('.place__title')
 
-//default places to load
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 function openPopup(popup) {
   popup.classList.add('popup_showed');
 }
 
-function openProfilePop() {
+function openEditProfilePopup() {
   newName.value = username.textContent;
   newRole.value = userRole.textContent;
   openPopup(profilePopup);
 }
 
-function closeProfilePop() {
+function closeEditProfilePopup() {
   profilePopup.classList.remove('popup_showed');
 }
 
-function openAddPlacePop() {
-  newPlaceTitle.value = "";
-  newPlaceImageUrl.value = "";
+function openAddCardPopup() {
+  placeForm.reset();
   openPopup(addPlacePopup);
 }
 
-function closeAddPlacePop() {
+function closeAddCardPopup() {
   addPlacePopup.classList.remove('popup_showed');
 }
 
-function closePlacePop () {
+function closePlacePopup () {
   placePopup.classList.remove('popup_showed');
 }
 
@@ -82,7 +53,7 @@ function updateProfile(evt) {
   evt.preventDefault();
   username.textContent = newName.value;
   userRole.textContent = newRole.value;
-  closeProfilePop()
+  closeEditProfilePopup()
 }
 
 //create card from teamplate
@@ -95,46 +66,46 @@ const createCard = function (title, url) {
   //like feature
   const likeButton = newCard.querySelector('.card__like');
   likeButton.addEventListener('click', function (event) {
-    let eventTarget = event.target;
+    const eventTarget = event.target;
     eventTarget.classList.toggle('card__like_liked')
   });
 
   //delete feature
   const deleteButton = newCard.querySelector('.card__delete-button');
   deleteButton.addEventListener('click', function (event) {
-    let eventTarget = event.target;
+    const eventTarget = event.target;
     const thatCard = eventTarget.closest('.card');
     thatCard.remove();
   })
 
   //open large photo with title feature
   const image = newCard.querySelector('.card__image');
-  image.addEventListener('click', function (event) {
-    let eventTarget = event.target;
-    placePopup.classList.add('popup_showed');
-    placePopupImage.src = eventTarget.src;
-    let cardTitle = eventTarget.nextElementSibling.firstElementChild;
-    placePopupTitle.textContent = cardTitle.textContent;
+    image.addEventListener('click', function (event) {
+      openPopup(placePopup);
+      placePopupImage.src = url;
+      placePopupTitle.textContent = title;
+      placePopupImage.alt = title;
   })
 
-  placesList.append(newCard);
+  return newCard;
+  //placesList.prepend(newCard);
 }
 
 function addCard(evt) {
   evt.preventDefault();
-  createCard(newPlaceTitle.value, newPlaceImageUrl.value);
-  closeAddPlacePop();
+  placesList.prepend(createCard(newPlaceTitle.value, newPlaceImageUrl.value));
+  closeAddCardPopup();
 }
 
 //set default cards
 initialCards.forEach( function (item) {
-  createCard(item.name, item.link);
+  placesList.prepend(createCard(item.name, item.link));
 })
 
-editButton.addEventListener('click', openProfilePop);
-addButton.addEventListener('click', openAddPlacePop);
-closeProfileButton.addEventListener('click', closeProfilePop);
-closeAddPlaceButton.addEventListener('click', closeAddPlacePop);
+editButton.addEventListener('click', openEditProfilePopup);
+addButton.addEventListener('click', openAddCardPopup);
+closeProfileButton.addEventListener('click', closeEditProfilePopup);
+closeAddPlaceButton.addEventListener('click', closeAddCardPopup);
 profileForm.addEventListener('submit', updateProfile);
 placeForm.addEventListener('submit', addCard);
-closePlaceButton.addEventListener('click', closePlacePop);
+closePlaceButton.addEventListener('click', closePlacePopup);
