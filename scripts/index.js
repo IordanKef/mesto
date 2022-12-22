@@ -22,8 +22,15 @@ const closePlaceButton = placePopup.querySelector('.popup__close-button');
 const placePopupImage = placePopup.querySelector('.place__image');
 const placePopupTitle = placePopup.querySelector('.place__title')
 
+const cardTemplate = document.querySelector('#card').content;
+
+
 function openPopup(popup) {
   popup.classList.add('popup_showed');
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_showed');
 }
 
 function openEditProfilePopup() {
@@ -32,35 +39,23 @@ function openEditProfilePopup() {
   openPopup(profilePopup);
 }
 
-function closeEditProfilePopup() {
-  profilePopup.classList.remove('popup_showed');
-}
-
 function openAddCardPopup() {
   placeForm.reset();
   openPopup(addPlacePopup);
-}
-
-function closeAddCardPopup() {
-  addPlacePopup.classList.remove('popup_showed');
-}
-
-function closePlacePopup () {
-  placePopup.classList.remove('popup_showed');
 }
 
 function updateProfile(evt) {
   evt.preventDefault();
   username.textContent = newName.value;
   userRole.textContent = newRole.value;
-  closeEditProfilePopup()
+  closePopup(profilePopup);
 }
 
 //create card from teamplate
 const createCard = function (title, url) {
-  const cardTemplate = document.querySelector('#card').content;
   const newCard = cardTemplate.querySelector('.card').cloneNode(true);
   newCard.querySelector('.card__title').textContent = title;
+  newCard.querySelector('.card__title').alt = title;
   newCard.querySelector('.card__image').src = url;
 
   //like feature
@@ -88,13 +83,12 @@ const createCard = function (title, url) {
   })
 
   return newCard;
-  //placesList.prepend(newCard);
 }
 
 function addCard(evt) {
   evt.preventDefault();
   placesList.prepend(createCard(newPlaceTitle.value, newPlaceImageUrl.value));
-  closeAddCardPopup();
+  closePopup(addPlacePopup);
 }
 
 //set default cards
@@ -104,8 +98,8 @@ initialCards.forEach( function (item) {
 
 editButton.addEventListener('click', openEditProfilePopup);
 addButton.addEventListener('click', openAddCardPopup);
-closeProfileButton.addEventListener('click', closeEditProfilePopup);
-closeAddPlaceButton.addEventListener('click', closeAddCardPopup);
+closeProfileButton.addEventListener('click', (evt) => closePopup(profilePopup));
+closeAddPlaceButton.addEventListener('click', (evt) => closePopup(addPlacePopup));
 profileForm.addEventListener('submit', updateProfile);
 placeForm.addEventListener('submit', addCard);
-closePlaceButton.addEventListener('click', closePlacePopup);
+closePlaceButton.addEventListener('click', (evt) => closePopup(placePopup));
